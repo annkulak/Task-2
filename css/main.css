@@ -1,0 +1,242 @@
+@import url("reset.css");
+
+html {
+    display: block;
+    margin: 0 auto;
+    max-width: 1240px;
+    min-width: 320px;
+}
+
+:root {
+    --text-color-dark: #05322c;
+    --text-color-light: white;
+    --background-color: #fbfcfe;
+    --other-background-color:azure;
+    --blackout-color: rgba(41, 41, 41, 0.6);
+    --color-level-first: rgb(53, 199, 53);
+    --color-level-second:  rgb(222, 241, 111);
+    --color-level-third: rgb(231, 38, 38);
+    --background-button-color: #eaeef1;
+    --background-button-acсent-color: #24af66;
+    --button-color: rgba(0, 0, 0, .6); 
+    --background-shadow-color: rgba(0, 0, 0, 0.5);
+    --button-shadow-color: rgba(255, 255, 255, .7);   
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    color: var(--text-color-dark);
+}
+
+section,
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: max-content;
+}
+
+.home-work-number {    
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 3% 2% 5% 2%;
+}
+
+.game-container {
+    flex-direction: column;
+    background-image: url(../picture/backgraung-1.jpg);
+    box-shadow: 0px 5px 10px 0px var(--background-shadow-color);
+    padding: 10px 20px 50px 20px;
+    max-width: 90vw;
+    max-height: 95vw;
+}
+
+.game-size-container {
+    flex-direction: row;
+    justify-content: flex-end;        
+    box-shadow: none;
+    margin: 0 20px 15px 0;
+    width: 100%;    
+    height: 10vw;
+    max-height: 30px;
+}
+
+.size-button {
+    border-radius: 50%;
+    border: none;    
+    margin: 4px;
+    width: 15px;
+    height: 15px;
+}
+
+button.size-button:nth-child(1) {
+    background-color: var(--color-level-first);    
+}
+
+button.size-button:nth-child(2) {
+    background-color: var(--color-level-second);
+}
+
+button.size-button:nth-child(3) {
+    background-color: var(--color-level-third);
+}
+
+.game-platform-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;    
+    width: 45vw;
+    max-width: 450px;
+    height: 45vw;
+    max-height: 450px;
+}
+
+.four-block {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);    
+}
+
+.five-block {    
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);    
+}
+
+.game-choice-container {
+    display: grid;    
+    grid-template-columns: repeat(3, 1fr);    
+    grid-gap: 0px;   
+    margin-top: 5%;
+    width: 45vw;
+    max-width: 450px;
+    height: 15vw;
+    max-height: 150px;
+}
+
+button {
+    font-weight: 700;    
+    text-shadow: 0 1px 1px var(--button-shadow-color);
+    background: none;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .2), 0 1px 2px rgba(0, 0, 0, .2), inset 0 1px 2px rgba(255, 255, 255, .7);
+    border: 1px solid var(--background-button-color);
+    border-radius: 4px;   
+    padding: 3px;
+}
+
+.game-button,
+.game-button-choice {    
+    width:100%;
+    height: 100%;
+    z-index: 1;   
+}
+
+button:active,
+button.active {
+    background: var(--other-background-color);
+    background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, .2), inset 0 2px 5px rgba(0, 0, 0, .2), 0 1px rgba(255, 255, 255, .2);
+}
+
+img {
+    visibility: hidden;
+    background: none;
+    object-fit: cover;   
+    object-position: 50% 50%;
+    padding: 0;
+    margin: 5%;    
+    width: 70%;
+    height: 70%;
+    z-index: 5;
+}
+
+img:hover {    
+    width: 75%;
+    height: 75%;    
+}
+
+img.active-picture {
+    visibility: visible;    
+}
+
+.window-result-blackout {    
+    visibility: hidden;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    background: var(--blackout-color);
+    width: 100%;
+    min-height: 100%;
+    padding: 30px;
+    z-index: 10;
+}
+
+.active {
+    visibility: visible;
+}
+
+.window-result {   
+    flex-direction: column;
+    justify-content: space-between;    
+    background: linear-gradient(45deg, #e6e9f0, #eef1f5);
+    border-radius: 5px;    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -160px;
+    margin-top: -150px;
+    width: 320px;
+    height: 100px;        
+    z-index: 10;
+}
+
+.container-text-result {
+    font-size: 20px;      
+    margin: 20px 10px;    
+    height: 40%;
+}
+
+.container-button-result {    
+    flex-direction: row;
+    height: 40%;
+}
+
+.button-result {    
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--other-background-color);
+    text-shadow: none;   
+    background: var(--background-button-acсent-color);
+    border: 5px linear var(--background-color);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-sizing: border-box;
+    padding: 3px;
+    width: 50%;
+    height: 100%;    
+}
+
+@media screen and (max-width: 470px) {
+              
+    .game-container {        
+        max-width: 90vw;
+        max-height: max-content;
+    }
+
+    .game-platform-container {
+        height: max-content;
+        max-height: max-content;
+    }
+
+    img {
+        width: 90%;
+        height: 90%;        
+    }
+}
